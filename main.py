@@ -9,6 +9,6 @@ if webcam.isOpened():
         key = cv2.waitKey(5)
         if key==27:
             break
-    cv2.imwrite("teste5.PNG", frame)
+    cv2.imwrite("img.PNG", frame)
 webcam.release()
 cv2.destroyAllWindows()
