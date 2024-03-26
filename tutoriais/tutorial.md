@@ -1,4 +1,4 @@
 # Tutoriais
 
 ## Adicionar arquivos modificados
-![foto git]("Tutorial comit github.jpeg")
+![foto git]("./Tutorial comit github.jpeg")
