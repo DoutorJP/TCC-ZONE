@@ -32,3 +32,29 @@ CREATE TABLE TBPresente(
 );
 
 SELECT * FROM TBPresente;
+
+
+-------------------------------------------------------------
+--CRUD - CREATE
+
+INSERT INTO TBUsuario VALUES
+(10, 'Evandro', '123.456.789/10', 0);
+
+INSERT INTO TBUsuario VALUES
+(20, 'Sérgio', '223.456.789/10', 0);
+
+--CRUD - READ
+
+SELECT * FROM TBUsuario;
+
+--CRUD - UPDATE
+
+UPDATE TBUsuario 
+SET UsuarioPresente = 1
+WHERE IDUsuario = 10;
+
+--CRUD - DELETE
+
+DELETE FROM TBUsuario
+WHERE IDUsuario = 10;
+
