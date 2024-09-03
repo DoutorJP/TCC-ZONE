@@ -1,15 +1,15 @@
 import pytesseract
 import cv2
 
-imagem = cv2.imread("img.png")
+img = cv2.imread("img.png")
 
 pytesseract.pytesseract.tesseract_cmd = r"C:\Program Files\Tesseract-OCR\Tesseract.exe"
+texto=''
+try:
+    texto = pytesseract.image_to_string(img, config='--psm 7')
+    print(texto)
+except pytesseract.TesseractError as e:
+    print(f"An error occurred during OCR: {e}")
+except Exception as e:
+    print(f"An unexpected error occurred: {e}")
 
-texto = pytesseract.image_to_string(imagem, lang="eng")
-print(texto)
-if texto[4].isalpha() == True:
-    print("Placa Mercosul")
-elif texto[4].isnumeric() == True:
-    print("Placa Antiga")
-else:
-    print("Placa não reconhecida.")
