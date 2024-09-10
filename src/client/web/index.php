@@ -20,10 +20,13 @@
 
                         <div class="card-header">
                             <h4>
-                                Leitura do Realtime Database - Firebase-PHP
+                                <b>
+                                    Entradas do Sistema
+                                </b>
                             </h4>
                         </div>
 
+                        
                         <div class="card-body">
                                 <table class="table table-bordered table-striped">
                                     <thead>
@@ -75,6 +78,80 @@
         </div>
     </div>
     
+    <div class="py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <h4>
+                                <b>
+                                    Usuários Cadastrados
+                                </b>
+                            </h4>
+                        </div>
+                        <div class="card-body">
+                        <table class="table table-bordered table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th>Proprietário</th>
+                                            <th>CPF</th>
+                                            <th>Carros</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                    <?php
+                                            include('dbconfig.php');
+
+                                            $ref_table = 'Usuario';
+                                            $fetchData = $database->getReference($ref_table)->getValue();
+
+
+                                            if($fetchData > 0){ //retornou algo
+                                                $hash = 1;
+                                                foreach($fetchData as $key => $row){
+                                                    $placas = $row['Placas'];
+                                                    
+                                                    
+
+
+                                        ?>
+                                                    <tr>
+                                                        <td><?=$row['Nome']?></td>
+                                                        <td><?=$row['CPF']?></td>
+                                                        <td>
+                                                            <?php
+                                                                foreach($placas as $p => $placa){
+                                                            
+                                                                    echo $placa;
+                                                                    if($p < count($placas)-1){
+                                                                        echo ", ";
+                                                                    }
+
+                                                                }
+                                                                                                                            
+                                                            ?>
+                                                        </td>
+                                                    </tr>
+                                        <?php
+                                                }
+                                            }
+                                            else{
+                                        ?>
+                                                <tr>
+                                                    <td colspan ="7">Nenhum entrada de dados no momento.</td>
+                                                </tr>
+                                        <?php
+                                            }
+                                        ?>
+                                    </tbody>
+                                </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
   </body>
