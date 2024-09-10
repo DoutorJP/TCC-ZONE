@@ -1,3 +1,7 @@
+<?php
+    include('dbconfig.php');
+?>
+
 <!doctype html>
 
 <html lang="en">
@@ -40,20 +44,39 @@
                                     </thead>
                                     <tbody>
                                         <?php
-                                            include('dbconfig.php');
+                                            //include('dbconfig.php');
 
                                             $ref_table = 'Carros';
                                             $fetchData = $database->getReference($ref_table)->getValue();
+
+                                            $ref_table2 = 'Usuario';
+                                            $fetchDataUser = $database->getReference($ref_table2)->getValue();
 
                                             
                                             if($fetchData > 0){ //retornou algo
                                                 $hash = 1;
                                                 foreach($fetchData as $key => $row){
+                                                    $aux=1;
                                         ?>
                                                     <tr>
                                                         <td><?=$hash++?></td>
                                                         <td><?=$row['DataEntrada']?></td>
-                                                        <td><?=$row['Dono']?></td>
+                                                        <?php
+                                                            foreach($fetchDataUser as $keyUser => $rowUser){
+                                                                $placas = $rowUser['Placas'];
+                                                                if(in_array($row['Placa'], $placas)){
+                                                                    echo "<td>" . $rowUser['Nome'] . "</td>";
+                                                                    $aux=0;
+                                                                    break;
+
+                                                                }                                                                
+                                                            }
+                                                            if($aux)
+                                                                echo "<td>" . $row['Dono'] . "</td>"
+                                                        ?>
+                                                        
+                                                     
+                                                        
                                                         <td><?=$row['Placa']?></td>
                                                         <td><?=$row['Modelo']?></td>
                                                     </tr>
@@ -101,7 +124,7 @@
                                     </thead>
                                     <tbody>
                                     <?php
-                                            include('dbconfig.php');
+                                            //include('dbconfig.php');
 
                                             $ref_table = 'Usuario';
                                             $fetchData = $database->getReference($ref_table)->getValue();
@@ -139,7 +162,7 @@
                                             else{
                                         ?>
                                                 <tr>
-                                                    <td colspan ="7">Nenhum entrada de dados no momento.</td>
+                                                    <td colspan ="7">Nenhuma entrada de dados no momento.</td>
                                                 </tr>
                                         <?php
                                             }
