@@ -1,4 +1,6 @@
 # TCC-ZONE
+![GitHub last commit](https://img.shields.io/github/last-commit/DoutorJP/TCC-ZONE)
+
 Implementação de uma solução para o gerenciamento de estacionamentos. 🚗
 
 ## Tecnologias Utilizadas 💻
