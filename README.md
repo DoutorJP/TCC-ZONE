@@ -3,6 +3,8 @@
 
 Implementação de uma solução para o gerenciamento de estacionamentos. 🚗
 
+O sistema contêm duas partes principais: cliente e servidor, estas, se conectam com o ![Firebase](https://firebase.google.com/?hl=pt-br), que funciona como armazenamento de dados e ponte entre ambas as partes.
+
 ## Tecnologias Utilizadas 💻
 ![Firebase](https://img.shields.io/badge/firebase-a08021?style=for-the-badge&logo=firebase&logoColor=ffcd34)
 ![PHP](https://img.shields.io/badge/php-%23777BB4.svg?style=for-the-badge&logo=php&logoColor=white)
