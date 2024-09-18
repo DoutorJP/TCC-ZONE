@@ -11,16 +11,26 @@ Implementação de uma solução para o gerenciamento de estacionamentos. 🚗
 ## Documentação 📘
 A documentação especifica para cada ferramenta deverá estar disponível em docs/
 
+## Instalação
+O script que (por hora) instala apenas as dependências se encontra na raiz do projeto: ```install.sh```
+
 ## TODO 📝
+### Servidor 🌐
  - [ ] Instalar e configurar um servidor web no Orange PI (APACHE)
+ - [ ] Criar um script de instalação
+ - [ ] Implementar o sistema no servidor
+ - [ ] Refinar os resultados do OCR
+ - [x] Melhorar fotos
+ - [x] Terminar a integração Python - Firebase
+ - [x] Encontrar uma versão que funcione no Linux do Tesseract ou encontrar outro OCR
+ - [ ] Implementar o tesseract no servidor 
+
+### Cliente 📊
  - [ ] Criar novas funcionalidades na interface
  - [ ] Criar um sistema de cadastro
- - [x] Criar um arquivo principal (bus)
- - [ ] Criar um script de instalação
  - [x] Revisar estrutura banco de dados
- - [ ] Encontrar uma versão que funcione no Linux do Tesseract ou encontrar outro OCR
  - [ ] Colher e mostrar estátisticas
  - [x] Desenvolver a interface PHP integrada com o Firebase
- - [x] Terminar a integração Python - Firebase
- - [x] Melhorar fotos
- - [ ] Refinar os resultados do OCR
+
+### Outro 📡
+ - [ ] Terminar o script de instalação e documentar.
