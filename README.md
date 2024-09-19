@@ -28,6 +28,7 @@ O script que (por hora) instala apenas as dependências se encontra na raiz do p
  - [ ] Implementar o tesseract no servidor 
 
 ### Cliente 📊
+ - [ ] Incluir resto das dependencias
  - [ ] Criar novas funcionalidades na interface
  - [ ] Criar um sistema de cadastro
  - [x] Revisar estrutura banco de dados
