@@ -20,7 +20,7 @@ O script que (por hora) instala apenas as dependências se encontra na raiz do p
 ### Servidor 🌐
  - [ ] Instalar e configurar um servidor web no Orange PI (APACHE)
  - [ ] Criar um script de instalação
- - [ ] Implementar o sistema no servidor
+ - [x] Implementar o sistema no servidor
  - [ ] Refinar os resultados do OCR
  - [x] Melhorar fotos
  - [x] Terminar a integração Python - Firebase
