@@ -17,7 +17,7 @@ A documentação especifica para cada ferramenta deverá estar disponível em do
 O script que (por hora) instala apenas as dependências se encontra na raiz do projeto: ```install.sh```
 
 ## TODO 📝
-### Servidor 🌐
+### SBC 🌐
  - [ ] Criar um script de instalação
  - [ ] Implementar o tesseract no servidor 
  - [x] Implementar o sistema no servidor
