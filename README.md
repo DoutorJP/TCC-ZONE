@@ -18,14 +18,13 @@ O script que (por hora) instala apenas as dependências se encontra na raiz do p
 
 ## TODO 📝
 ### Servidor 🌐
- - [ ] Instalar e configurar um servidor web no Orange PI (APACHE)
  - [ ] Criar um script de instalação
+ - [ ] Implementar o tesseract no servidor 
  - [x] Implementar o sistema no servidor
- - [ ] Refinar os resultados do OCR
+ - [x] Refinar os resultados do OCR
  - [x] Melhorar fotos
  - [x] Terminar a integração Python - Firebase
  - [x] Encontrar uma versão que funcione no Linux do Tesseract ou encontrar outro OCR
- - [ ] Implementar o tesseract no servidor 
 
 ### Cliente 📊
  - [ ] Incluir resto das dependencias
