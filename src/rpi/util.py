@@ -25,13 +25,13 @@ def image_cleaning(img, alpha, beta, gamma, thresh):
     img_gray = cv2.cvtColor(img, cv2.COLOR_RGB2GRAY)
 
     # 2) Ajustar o brilho da imagem com a função adjust_brightness()
-    img_brilho = adjust_brightness(img_gray, 0.6, 10)
+    img_brilho = adjust_brightness(img_gray, alpha, beta)
 
     # 3) Ajustar o contraste da imagem com a função ajust_gamma()
-    imgt = adjust_gamma(img_brilho, 1.2)
+    imgt = adjust_gamma(img_brilho, gamma)
 
     # 4) Linearizando a imagem
-    _, bin = cv2.threshold(imgt, 90, 255, cv2.THRESH_BINARY)
+    _, bin = cv2.threshold(imgt, thresh, 255, cv2.THRESH_BINARY)
 
     # 5) Desfocar a imagem
     # blur = cv2.GaussianBlur(bin, (5, 5), 0)
