@@ -14,7 +14,25 @@ O sistema contêm duas partes principais: cliente e servidor, estas, se conectam
 A documentação especifica para cada ferramenta deverá estar disponível em docs/
 
 ## Instalação
+A Instalação é feita de forma manual, pela equipe de desenvolvimento do ZONE
+
+### Dependências
 O script que (por hora) instala apenas as dependências se encontra na raiz do projeto: ```install.sh```
+#### SBC 🌐
+##### PIP
+ - certifi
+ - charset-normalizer
+ - idna
+ - imutils
+ - numpy
+ - opencv-python
+ - packaging
+ - pillow
+ - pytesseract
+ - requests
+ - urllib3
+#### Cliente 📊
+##### Composer
 
 ## TODO 📝
 ### SBC 🌐
