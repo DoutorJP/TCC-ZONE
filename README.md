@@ -33,6 +33,7 @@ O script que (por hora) instala apenas as dependências se encontra na raiz do p
  - urllib3
 #### Cliente 📊
 ##### Composer
+ - !(firebase-php)[https://github.com/kreait/firebase-php]
 
 ## TODO 📝
 ### SBC 🌐
