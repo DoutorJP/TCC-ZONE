@@ -1,2 +1,4 @@
 src/rpi/__pycache__
+src/rpi/obj/__pycache__
+src/rpi/utils/__pycache__
 src/rpi/*env/
