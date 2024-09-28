@@ -7,11 +7,10 @@ def main():
     # source = "Car_Images/car_1.jpg"
     #find_Roi_Plate(source)
     #Pre_Processing_Roi()
-    #OCR_Plate()
+    #placa = OCR_Plate()
     
     # Enviar dados processados
     carro = Carro.Carro("", "", "")
-    print(carro.dataEntradavar)
     #escrever_dados(carro)
     
 
