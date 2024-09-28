@@ -1,8 +1,8 @@
 import requests
 import json
-import Carro
+from obj import Carro
 from datetime import datetime
-import leitura
+
 
 link = "https://dbteste-449d5-default-rtdb.firebaseio.com"
 
