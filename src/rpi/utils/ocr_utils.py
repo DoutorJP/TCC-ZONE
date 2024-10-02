@@ -51,15 +51,15 @@ def find_Roi_Plate(source):
 
     # Aplicando um contorno a imagem linear (binarizada)
     contorn, hier = cv2.findContours(bin, cv2.RETR_TREE, cv2.CHAIN_APPROX_NONE)
-    # cv2.drawContours(img, contorn, -1, (0, 255, 0), 2)
-    # cv2.imshow('cont', img)
+   # cv2.drawContours(img, contorn, -1, (0, 255, 0), 2)
+   # cv2.imshow('cont', img)
 
     # Procurando contornos que se parecem com retângulos para recorte
     for c in contorn:
         perimeter = cv2.arcLength(c, True)
 
         # Limpando contornos excessivamente grandes e pequenos (grandes chances de não ser uma placa)
-        if perimeter > 150 and perimeter < 900:
+        if perimeter > 150:
 
             aproxx = cv2.approxPolyDP(c, 0.03 * perimeter, True)
 
@@ -78,19 +78,19 @@ def find_Roi_Plate(source):
 
     # imagem contornada
     cv2.imshow('imagem contornada', img)
-
+    cv2.imwrite('roi.jpg', img)
     cv2.waitKey(0)
     cv2.destroyAllWindows()
 
 
 
 def Pre_Processing_Roi():
-    img_roi = cv2.imread("Rois/roi.jpg")
+    img_roi = cv2.imread("roi.jpg")
     if img_roi is None:
         return
 
     img_roi = image_cleaning(img_roi, 0.6, 10, 1.2, 80)
-    cv2.imwrite("Rois/roi-ocr.jpg", img_roi)
+    cv2.imwrite("roi-ocr.jpg", img_roi)
 
     cv2.imshow("res", img_roi)
 
@@ -99,13 +99,14 @@ def Pre_Processing_Roi():
 
 
 def OCR_Plate():
-    pytesseract.pytesseract.tesseract_cmd = r'Tesseract-OCR\tesseract'
+    pytesseract.pytesseract.tesseract_cmd = 'C:\\Program Files\\Tesseract-OCR'
 
-    img = cv2.imread("Rois/roi-ocr.jpg")
+    img = cv2.imread("roi-ocr.jpg")
 
     config = r'-c tessedit_char_whitelist=ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789 --psm 6'
 
     out = pytesseract.image_to_string(img, lang="eng", config=config)
     
-    print(out)
-    return out
+    #print(out)
+    #return out
+

@@ -1,16 +1,19 @@
-from utils import ocr_utils
-from utils import crud
+import cv2
+
+from utils.ocr_utils import *
+import utils.crud
 from obj import Carro
 def main():
 
     # Processamento de dados
-    # source = "Car_Images/car_1.jpg"
-    #find_Roi_Plate(source)
-    #Pre_Processing_Roi()
-    #placa = OCR_Plate()
+    source = "car1.jpg"
+
+    find_Roi_Plate(source)
+    Pre_Processing_Roi()
+    placa = OCR_Plate()
     
     # Enviar dados processados
-    carro = Carro.Carro("", "", "")
+    #carro = Carro.Carro("", "", "")
     #escrever_dados(carro)
     
 
