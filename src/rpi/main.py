@@ -11,7 +11,8 @@ def main():
     find_Roi_Plate(source)
     Pre_Processing_Roi()
     placa = OCR_Plate()
-    
+
+
     # Enviar dados processados
     #carro = Carro.Carro("", "", "")
     #escrever_dados(carro)
