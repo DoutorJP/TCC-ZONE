@@ -1,5 +1,7 @@
 import cv2
+import easyocr
 import numpy as np
+import easyocr
 import pytesseract
 
 
@@ -47,7 +49,7 @@ def find_Roi_Plate(source):
     #cv2.imshow('imgagem sem alteracoes', img)
 
     # Tratamento de imagem
-    bin = image_cleaning(img, 0.6, 10, 1.2, 90)
+    bin = image_cleaning(img, 0.6, 10, 0.8, 90)
 
     # Aplicando um contorno a imagem linear (binarizada)
     contorn, hier = cv2.findContours(bin, cv2.RETR_TREE, cv2.CHAIN_APPROX_NONE)
@@ -73,14 +75,14 @@ def find_Roi_Plate(source):
                     roi = img[y:(y + lar), x:(x + comp)]
 
                     # Recorta a imagem da placa e para o for
-                    cv2.imwrite('Rois/roi.jpg', roi)
+                    cv2.imwrite('roi.jpg', roi)
                     break
 
     # imagem contornada
-    cv2.imshow('imagem contornada', img)
-    cv2.imwrite('roi.jpg', img)
-    cv2.waitKey(0)
-    cv2.destroyAllWindows()
+    #cv2.imshow('imagem contornada', img)
+    #cv2.imwrite('roi.jpg', img)
+    #cv2.waitKey(0)
+    #cv2.destroyAllWindows()
 
 
 
@@ -92,21 +94,21 @@ def Pre_Processing_Roi():
     img_roi = image_cleaning(img_roi, 0.6, 10, 1.2, 80)
     cv2.imwrite("roi-ocr.jpg", img_roi)
 
-    cv2.imshow("res", img_roi)
+    #cv2.imshow("res", img_roi)
 
-    cv2.waitKey(0)
-    cv2.destroyAllWindows()
+    #cv2.waitKey(0)
+    #cv2.destroyAllWindows()
 
 
 def OCR_Plate():
-    pytesseract.pytesseract.tesseract_cmd = 'C:\\Program Files\\Tesseract-OCR'
 
     img = cv2.imread("roi-ocr.jpg")
 
-    config = r'-c tessedit_char_whitelist=ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789 --psm 6'
-
-    out = pytesseract.image_to_string(img, lang="eng", config=config)
-
-    #print(out)
+    #pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tesseract.exe'
+    #config = r'-c tessedit_char_whitelist=ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789 --psm 6'
+    #out = pytesseract.image_to_string(img, lang="eng", config=config)
+    reader = easyocr.Reader(['en'])
+    out = reader.readtext(img)
+    print(out)
     #return out
 
