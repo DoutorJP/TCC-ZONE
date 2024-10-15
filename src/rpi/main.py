@@ -1,7 +1,7 @@
 
 
 from utils.ocr_utils import *
-import utils.crud
+from utils.crud import *
 from obj import Carro
 from utils.camera import open_camera
 
@@ -20,12 +20,13 @@ def main():
 
     # Processamento de dados
     placa = processar_dados(source)
+    carro = Carro.Carro(placa, "", "")
 
 
+    # Enviar dados processados (ainda n funfa direito)
+    if(verificar_placa_sistema(carro) == False):
+        escrever_dados(carro)
 
-    # Enviar dados processados
-    #carro = Carro.Carro("", "", "")
-    #escrever_dados(carro)
     
 
 if __name__ == "__main__":
