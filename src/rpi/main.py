@@ -1,16 +1,26 @@
-import cv2
+
 
 from utils.ocr_utils import *
 import utils.crud
 from obj import Carro
-def main():
+from utils.camera import open_camera
 
-    # Processamento de dados
-    source = "car1.jpg"
 
+
+def processar_dados(source):
     find_Roi_Plate(source)
     Pre_Processing_Roi()
-    placa = OCR_Plate()
+    return OCR_Plate()
+
+def main():
+
+    #open_camera()
+    #source = "img.png"
+    source = "car2.jpg" # retirar mais tarde
+
+    # Processamento de dados
+    placa = processar_dados(source)
+
 
 
     # Enviar dados processados

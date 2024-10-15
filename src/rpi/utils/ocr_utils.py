@@ -2,7 +2,7 @@ import cv2
 import easyocr
 import numpy as np
 import easyocr
-import pytesseract
+#import pytesseract
 
 
 def adjust_brightness(image, alpha, beta):
@@ -108,7 +108,7 @@ def OCR_Plate():
     #config = r'-c tessedit_char_whitelist=ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789 --psm 6'
     #out = pytesseract.image_to_string(img, lang="eng", config=config)
     reader = easyocr.Reader(['en'])
-    out = reader.readtext(img)
-    print(out)
-    #return out
+    out = reader.readtext(img)[1][1]
+    #print(out)
+    return out
 

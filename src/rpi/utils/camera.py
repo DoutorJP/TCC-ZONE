@@ -19,7 +19,9 @@ def open_camera():
 
         frame = cv2.resize(frame, (620,480) )
         cv2.imwrite("img.PNG", frame)
+        webcam.release()
 
-webcam.release()
-#deletar quando não for mais preciso o frame...
-cv2.destroyAllWindows()
+        # deletar quando não for mais preciso o frame...
+        cv2.destroyAllWindows()
+
+
