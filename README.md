@@ -37,11 +37,11 @@ O script que (por hora) instala apenas as dependências se encontra na raiz do p
 
 ## TODO 📝
 ### SBC 🌐
- - [ ] Criar um script de instalação
- - [ ] Implementar o tesseract no servidor 
+ ~~- [ ] Criar um script de instalação~~
+ - [x] Implementar o OCR no servidor 
  - [x] Implementar o sistema no servidor
  - [x] Refinar os resultados do OCR
- - [ ] Melhorar tratamento das fotos
+ - [x] Melhorar tratamento das fotos
  - [x] Terminar a integração Python - Firebase
  - [x] Encontrar uma versão que funcione no Linux do Tesseract ou encontrar outro OCR
 
@@ -50,8 +50,8 @@ O script que (por hora) instala apenas as dependências se encontra na raiz do p
  - [ ] Criar novas funcionalidades na interface
  - [ ] Criar um sistema de cadastro
  - [x] Revisar estrutura banco de dados
- - [ ] Colher e mostrar estátisticas
+ ~~- [ ] Colher e mostrar estátisticas~~
  - [x] Desenvolver a interface PHP integrada com o Firebase
 
 ### Outro 📡
- - [ ] Terminar o script de instalação e documentar.
+ - [ ] Criar o artigo
