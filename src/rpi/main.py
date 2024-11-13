@@ -1,9 +1,8 @@
-
-
 from utils.ocr_utils import *
 from utils.crud import *
 from obj import Carro
 from utils.camera import open_camera
+import os
 
 
 
@@ -14,7 +13,7 @@ def processar_dados(source):
 
 def main():
 
-    #open_camera()
+    open_camera()
     #source = "img.png"
     source = "car2.jpg" # retirar mais tarde
 
@@ -27,7 +26,7 @@ def main():
     if(verificar_placa_sistema(carro) == False):
         escrever_dados(carro)
 
-    
+
 
 if __name__ == "__main__":
     main()

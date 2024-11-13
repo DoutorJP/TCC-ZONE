@@ -12,14 +12,13 @@ def escrever_dados(carro):
     requesicao = requests.post(f'{link}/Carros/.json', data=json.dumps(dados))
 
 
-#ainda n funfa direito
 def verificar_placa_sistema(carro):
     dict = ler_dados(carro)
     if carro.placa in dict:
-        print("placa " + carro.placa + " encontrada no sistema")
+        print("placa " + carro.placa + " não encontrada no sistema")
         return True
     else:
-        print("placa " + carro.placa + " não encontrada no sistema")
+        print("placa " + carro.placa + "  encontrada no sistema")
         return False
 
 def ler_dados(carro):
