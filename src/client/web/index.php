@@ -9,7 +9,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="refresh" content="3">
+    <!--<meta http-equiv="refresh" content="3">-->
     <title>Teste do Zone-TCC</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   </head>
@@ -101,6 +101,7 @@
         </div>
     </div>
     
+    
     <div class="py-4">
         <div class="container">
             <div class="row">
@@ -111,6 +112,8 @@
                                 <b>
                                     Usuários Cadastrados
                                 </b>
+
+                                <a href="cadastrar.php" class="btn btn-primary float-end">CADASTRAR USUÁRIO</a>
                             </h4>
                         </div>
                         <div class="card-body">
